@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internshala Bot Filter</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+    <style>
+        body {
+            text-align: center;
+            background-color: #c5c1f7;
+            padding: 30px;
+            font-size: 20px;
+        }
+        h2 {
+            color: #021978;
+            font-size:30px ; 
+            
+        }
+        h3{
+            color: #433b97;
+        }
+        .help{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        form {
+            background-color: #7973cc;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            min-width: 40vw;
+            min-height: 60vh;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.571);
+            color:rgb(11, 11, 52);
+            font-size: 19px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-left: 0px;
+            padding-left: 10px;
+            border-color: aliceblue;
+            background-color: white;
+            
+        }
+        button {
+            background-color:white;
+            color:  #14013b;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size:medium;
+        }
+        button:hover {
+            background-color:#14013b;
+            color:white;
+        }
+        .choices {
+            width: 90% !important;
+            margin-top: 10px;
+            padding-top: 0px;
+            padding-left: 25px;
+            color:rgb(40, 40, 40);
+        }
+        
+    </style>
+</head>
+<body>
+
+<h2><b><u>APPLY FOR SEVERAL INTERNSHIPS IN 1 GO!!</u></b></h2>
+<h3>...Save your time...</h3>
+<div class="help">
+<form action="/run-bot" method="post">
+    <label for="receiver_email">Email:</label>
+    <input type="email" placeholder="enter your e-mail" ="receiver_email" name="receiver_email" placeholderValue="Enter the email" required>
+
+    <label for="min_stipend">Minimum Stipend:</label>
+    <input type="number"placeholder="enter minimum stipend you want.." id="min_stipend" name="min_stipend"  required>
+
+    <label for="max_duration">Maximum Duration (in months):</label>
+    <input type="number" placeholder="enter maximum time you want as an intern.." id="max_duration" name="max_duration" required>
+
+    <label for="keywords" >Select Relevant Keywords:</label>
+    <select id="keywords" name="keywords" multiple required>
+        <!-- CSE / IT -->
+        <option value="web development">Web Development</option>
+        <option value="frontend development">Frontend Development</option>
+        <option value="backend development">Backend Development</option>
+        <option value="full stack development">Full Stack Development</option>
+        <option value="python development">Python Development</option>
+        <option value="machine learning">Machine Learning</option>
+        <option value="data science">Data Science</option>
+        <option value="android development">Android Development</option>
+        <option value="app development">App Development</option>
+        <option value="devops">DevOps</option>
+        <option value="cybersecurity">Cybersecurity</option>
+        <option value="blockchain">Blockchain</option>
+        <option value="software development">Software Development</option>
+        <option value="react">React</option>
+        <option value="django">Django</option>
+        <option value="flask">Flask</option>
+
+        <!-- ECE / EEE -->
+        <option value="vlsi">VLSI</option>
+        <option value="embedded systems">Embedded Systems</option>
+        <option value="electronics">Electronics</option>
+        <option value="iot">IoT</option>
+        <option value="pcb design">PCB Design</option>
+        <option value="circuit design">Circuit Design</option>
+        <option value="signal processing">Signal Processing</option>
+        <option value="robotics">Robotics</option>
+
+        <!-- Mechanical -->
+        <option value="solidworks">SolidWorks</option>
+        <option value="autocad">AutoCAD</option>
+        <option value="catia">CATIA</option>
+        <option value="mechanical design">Mechanical Design</option>
+        <option value="ansys">ANSYS</option>
+        <option value="thermal engineering">Thermal Engineering</option>
+
+        <!-- Civil -->
+        <option value="civil engineering">Civil Engineering</option>
+        <option value="construction">Construction</option>
+        <option value="autocad civil">AutoCAD Civil</option>
+        <option value="site engineering">Site Engineering</option>
+        <option value="staad pro">STAAD Pro</option>
+        <option value="structural engineering">Structural Engineering</option>
+
+        <!-- General -->
+        <option value="research">Research</option>
+        <option value="content writing">Content Writing</option>
+        <option value="technical writing">Technical Writing</option>
+    </select>
+
+    <button type="submit"><b>Submit</b></button>
+</form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+ <script>
+  const keywordSelect = document.getElementById('keywords');
+  const choices = new Choices(keywordSelect, {
+    removeItemButton: true,  
+    placeholderValue: 'Type to search...',
+  });
+</script>
+</body>
+</html>
